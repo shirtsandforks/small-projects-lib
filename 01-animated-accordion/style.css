@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #03b5d2;
+}
+
+nav {
+  padding: 20px;
+}
+
+.navbar a {
+  font-size: 24px;
+  transition: 0.4s ease;
+}
+
+.navbar a:hover {
+  opacity: 0.6;
+}
+
+body {
+  background: #fff;
+  color: #4d5974;
+  min-height: 100vh;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded="true"] {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.accordion button:hover:after,
+.accordion button:focus:after {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.accordion button .accordion-title {
+  padding: 1rem 1.5rem 1rem 0;
+}
+
+.accordion-icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+
+.accordion-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded="true"] {
+  color: var(--primary-color);
+}
+
+.accordion button[aria-expanded="true"] .accordion-icon::after {
+  width: 0;
+}
+
+.accordion button[aria-expanded="true"] + .accordion-content {
+  opacity: 1;
+  max-height: 9rem;
+  transition: all 0.2s linear;
+  will-change: opacity, max-height;
+}
+
+.accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.2s linear, max-height 0.2s linear;
+  will-change: opacity, max-height;
+}
+
+.accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2rem 0;
+}
